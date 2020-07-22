@@ -1,6 +1,9 @@
 <!doctype html>
 <!--[if lte IE 9]>     <html lang="en" class="no-focus lt-ie10 lt-ie10-msg"> <![endif]-->
-<!--[if gt IE 9]><!--> <html lang="en" class="no-focus"> <!--<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-focus">
+<!--<![endif]-->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -34,6 +37,7 @@
     <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
     <!-- END Stylesheets -->
 </head>
+
 <body>
     <div id="page-container" class="main-content-boxed">
         <!-- Main Container -->
@@ -57,72 +61,68 @@
                     <div class="hero-static col-md-6 col-xl-4 d-flex align-items-center bg-white">
                         <div class="content content-full">
                             <!-- Header -->
-                            <div class="px-30 py-10">
-                                <a class="link-effect font-w700" href="index.html">
-                                    <i class="si si-fire"></i>
-                                    <span class="font-size-xl text-primary-dark">Mesa de </span><span class="font-size-xl">Partes</span>
-                                </a>
-                                <h1 class="h3 font-w700 mt-30 mb-10">Crear Nueva Cuenta</h1>
-                                <h2 class="h5 font-w400 text-muted mb-0">Por favor, agregue sus datos</h2>
-                            </div>
-                            <!-- END Header -->
-
-                            <!-- Sign Up Form -->
-                            <!-- jQuery Validation (.js-validation-signup class is initialized in js/pages/op_auth_signup.js) -->
-                            <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                            <form class="js-validation-signup px-30" action="be_pages_auth_all.html" method="post">
-                                <div class="form-group row">
-                                    <div class="col-12">
-                                        <div class="form-material floating">
-                                            <input type="text" class="form-control" id="signup-username" name="signup-username">
-                                            <label for="signup-username">Nombres y Apellidos</label>
+                            <form method="post" id="usuario_form">
+                                <div class="px-30 py-10">
+                                    <a class="link-effect font-w700" href="index.html">
+                                        <i class="si si-fire"></i>
+                                        <span class="font-size-xl text-primary-dark">Mesa de </span><span class="font-size-xl">Partes</span>
+                                    </a>
+                                    <h1 class="h3 font-w700 mt-30 mb-10">Crear Nueva Cuenta</h1>
+                                    <h2 class="h5 font-w400 text-muted mb-0">Por favor, agregue sus datos</h2>
+                                </div>
+                                <div class="px-30">
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <div class="form-material floating">
+                                                <input type="text" class="form-control" id="nombre" name="nombre">
+                                                <label for="nombre">Nombres</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-12">
-                                        <div class="form-material floating">
-                                            <input type="email" class="form-control" id="signup-email" name="signup-email">
-                                            <label for="signup-email">Email</label>
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <div class="form-material floating">
+                                                <input type="text" class="form-control" id="apellido" name="apellido">
+                                                <label for="apellido">Apellidos</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-12">
-                                        <div class="form-material floating">
-                                            <input type="password" class="form-control" id="signup-password" name="signup-password">
-                                            <label for="signup-password">Contraseña</label>
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <div class="form-material floating">
+                                                <input type="email" class="form-control" id="correo" name="correo">
+                                                <label for="correo">Email</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-12">
-                                        <div class="form-material floating">
-                                            <input type="password" class="form-control" id="signup-password-confirm" name="signup-password-confirm">
-                                            <label for="signup-password-confirm">Confirmar Contraseña</label>
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <div class="form-material floating">
+                                                <input type="password" class="form-control" id="clave1" name="clave1">
+                                                <label for="clave1">Contraseña</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-12">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="signup-terms" name="signup-terms">
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description">Acepto los Términos &amp; Condiciones</span>
-                                        </label>
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <div class="form-material floating">
+                                                <input type="password" class="form-control" id="clave2" name="clave2">
+                                                <label for="clave2">Confirmar Contraseña</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-sm btn-hero btn-alt-success">
-                                        <i class="fa fa-plus mr-10"></i> Crear Cuenta
-                                    </button>
-                                    <div class="mt-30">
-                                        <a class="link-effect text-muted mr-10 mb-5 d-inline-block" href="#" data-toggle="modal" data-target="#modal-terms">
-                                            <i class="fa fa-book text-muted mr-5"></i> Términos de lectura
-                                        </a>
-                                        <a class="link-effect text-muted mr-10 mb-5 d-inline-block" href="../">
-                                            <i class="fa fa-user text-muted mr-5"></i> Inicia sesión
-                                        </a>
+                                    <div class="form-group">
+                                        <button type="submit" name="action" value="add" id="btnguardar" class="btn btn-sm btn-hero btn-alt-success">
+                                            <i class="fa fa-plus mr-10"></i> Crear Cuenta
+                                        </button>
+                                        <div class="mt-30">
+                                            <a class="link-effect text-muted mr-10 mb-5 d-inline-block" href="../">
+                                                <i class="fa fa-user text-muted mr-5"></i> Inicia sesión
+                                            </a>
+                                            <a class="link-effect text-muted mr-10 mb-5 d-inline-block" href="../RecuperarClave/">
+                                                <i class="fa fa-user text-muted mr-5"></i> Recuperar contraseña
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -166,10 +166,6 @@
             </div>
         </div>
     </div>
-    <!-- END Terms Modal -->
-
-
-    <!-- Codebase Core JS -->
     <script src="../public/assets/js/core/jquery.min.js"></script>
     <script src="../public/assets/js/core/popper.min.js"></script>
     <script src="../public/assets/js/core/bootstrap.min.js"></script>
@@ -179,12 +175,10 @@
     <script src="../public/assets/js/core/jquery.countTo.min.js"></script>
     <script src="../public/assets/js/core/js.cookie.min.js"></script>
     <script src="../public/assets/js/codebase.js"></script>
-
-    <!-- Page JS Plugins -->
     <script src="../public/assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
-
-    <!-- Page JS Code -->
     <script src="../public/assets/js/pages/op_auth_signup.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script type="text/javascript" src="registrarse.js"></script>
 </body>
+
 </html>

@@ -36,4 +36,28 @@ class Usuario extends Conectar
             }
         }
     }
+
+    public function registrarUsuario($nombre, $apellido, $correo, $clave)
+    {
+        $conectar = parent::Conexion();
+        parent::set_names();
+        $sql = "INSERT INTO usuarios VALUES (NULL,?,?,?,?,NULL,NULL,NULL,'1');";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $nombre);
+        $sql->bindValue(2, $apellido);
+        $sql->bindValue(3, $correo);
+        $sql->bindValue(4, $clave);
+        $sql->execute();
+    }
+
+    public function getCorreoUsuario($correo)
+    {
+        $conectar = parent::Conexion();
+        parent::set_names();
+        $sql = "SELECT * FROM usuarios WHERE correo=? AND estado=1;";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $correo);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
 }
