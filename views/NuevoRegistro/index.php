@@ -11,7 +11,7 @@ if (isset($_SESSION["id"])) {
     </head>
 
     <body>
-        <div id="page-container" class="sidebar-o side-scroll page-header-modern main-content-boxed">
+        <div id="page-container" class="sidebar-o side-scroll page-header-modern main-content-boxed sidebar-inverse">
             <aside id="side-overlay">
                 <div id="side-overlay-scroll">
                     <div class="content-header content-header-fullrow">
@@ -46,18 +46,19 @@ if (isset($_SESSION["id"])) {
                     <div class="block">
                         <div class="block-header block-header-default">
                             <h3 class="block-title">Nuevo Registro <small>Mesa de Partes</small></h3>
+                            <input type="hidden" id="id" class="form-control" />
                         </div>
                         <div class="block-content block-content-full">
                             <div class="form-group row">
-                                <label class="col-12" for="example-text-input">Asunto:</label>
+                                <label class="col-12" for="asunto">Asunto:</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" id="example-text-input" name="example-text-input">
+                                    <input type="text" class="form-control" id="asunto" name="asunto">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-12" for="example-textarea-input">Descripción:</label>
+                                <label class="col-12" for="descripcion">Descripción:</label>
                                 <div class="col-12">
-                                    <textarea class="form-control" id="example-textarea-input" name="example-textarea-input" rows="6"></textarea>
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="6"></textarea>
                                 </div>
                             </div>
                             <div class="block-content block-content-sm block-content-full bg-body-light">
@@ -68,7 +69,7 @@ if (isset($_SESSION["id"])) {
                                         </button>
                                     </div>
                                     <div class="col-6 text-right">
-                                        <button type="button" class="btn btn-alt-primary">
+                                        <button type="button" class="btn btn-alt-primary" id="btnguardar">
                                             Guardar <i class="fa fa-save"></i>
                                         </button>
                                     </div>
@@ -130,7 +131,8 @@ if (isset($_SESSION["id"])) {
         </div>
 
         <?php require_once("../MainJs/MainJs.php"); ?>
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script type="text/javascript" src="nuevoregistro.js"></script>
     </body>
 
     </html>
